@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fast"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zqy.rxjava2demo.use.operator.create.fast.FastActivity"
+    android:background="@color/colorWindows"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/layout_top"/>
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
+
+    <Button
+        android:id="@+id/btn_just"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="just"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_fromArray"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="fromArray"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_fromIterable"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="fromIterable"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_empty"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="empty"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_error"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="error"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_never"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="never"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_zip_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zqy.rxjava2demo.use.operator.combination.zip.ZipListActivity"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/layout_top"/>
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="按数量："
+        android:lineSpacingExtra="5dp"/>
+
+    <Button
+        android:id="@+id/btn_zip"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="zip"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="按时间："
+        android:lineSpacingExtra="5dp"/>
+
+    <Button
+        android:id="@+id/btn_combineLatest"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="combineLatest"/>
+
+    <Button
+        android:id="@+id/btn_combineLatestDelayError"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="combineLatestDelayError"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="合并成1个事件发送："
+        android:lineSpacingExtra="5dp"/>
+
+    <Button
+        android:id="@+id/btn_reduce"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="reduce"/>
+
+    <Button
+        android:id="@+id/btn_collect"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="collect"/>
+
+</LinearLayout>

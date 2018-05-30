@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_scene"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zqy.rxjava2demo.use.scene.SceneActivity"
+    android:orientation="vertical"
+    android:background="@color/colorWindows">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/layout_top"/>
+
+    <Button
+        android:id="@+id/btn_shake"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="功能防抖"/>
+
+    <Button
+        android:id="@+id/btn_cache"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="获取缓存数据"/>
+
+    <Button
+        android:id="@+id/btn_merge_display"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="合并 + 展示数据"/>
+
+    <Button
+        android:id="@+id/btn_judgment"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="联合判断"/>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="联想搜索优化"/>
+
+    <Button
+        android:id="@+id/btn_callback"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="网络请求嵌套回调"/>
+
+    <Button
+        android:id="@+id/btn_conditional"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="网络请求轮询（有条件）"/>
+
+    <Button
+        android:id="@+id/btn_unconditional"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="网络请求轮询（无条件）"/>
+
+    <Button
+        android:id="@+id/btn_reconnection"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAllCaps="false"
+        android:text="网络请求出错重连"/>
+
+</LinearLayout>

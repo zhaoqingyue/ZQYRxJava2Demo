@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zqy.rxjava2demo">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".app.RxJava2App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/BaseTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".use.BaseUseActivity">
+        </activity>
+        <activity android:name=".use.operator.OperatorActivity">
+        </activity>
+        <activity android:name=".use.operator.create.EstablishActivity">
+        </activity>
+        <activity android:name=".use.operator.function.FunctionActivity">
+        </activity>
+        <activity android:name=".use.operator.filter.FilterActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.CombinationActivity">
+        </activity>
+        <activity android:name=".use.operator.convert.ConvertActivity">
+        </activity>
+        <activity android:name=".use.operator.condition.ConditionActivity">
+        </activity>
+        <activity android:name=".use.operator.create.base.CreateActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.FastActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.JustActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.FromArrayActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.FromIterableActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.EmptyActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.ErrorActivity">
+        </activity>
+        <activity android:name=".use.operator.create.fast.NeverActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.DelayActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.DeferActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.IntervalActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.IntervalRangeActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.RangeActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.RangeLongActivity">
+        </activity>
+        <activity android:name=".use.operator.create.delay.TimerActivity">
+        </activity>
+        <activity android:name=".use.operator.convert.MapActivity">
+        </activity>
+        <activity android:name=".use.operator.convert.FlatMapActivity">
+        </activity>
+        <activity android:name=".use.operator.convert.ConcatMapActivity">
+        </activity>
+        <activity android:name=".use.operator.convert.BufferActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.MergeListActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.zip.ZipListActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.start.StartListActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.count.CountActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.ConcatActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.ConcatArrayActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.MergeActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.MergeArrayActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.ConcatDelayErrorActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.merge.MergeDelayErrorActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.zip.ZipActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.zip.CombineLatestActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.zip.ReduceActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.zip.CollectActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.start.StartWithActivity">
+        </activity>
+        <activity android:name=".use.operator.combination.start.StartWithArrayActivity">
+        </activity>
+        <activity android:name=".use.scene.SceneActivity">
+        </activity>
+        <activity android:name=".use.scene.ShakeActivity">
+        </activity>
+        <activity android:name=".use.scene.JudgmentActivity">
+        </activity>
+        <activity android:name=".use.scene.CacheActivity">
+        </activity>
+        <activity android:name=".use.scene.MergeDisplayActivity">
+        </activity>
+        <activity android:name=".use.scene.ZipDisplayActivity">
+        </activity>
+        <activity android:name=".use.scene.SearchActivity">
+        </activity>
+    </application>
+
+</manifest>

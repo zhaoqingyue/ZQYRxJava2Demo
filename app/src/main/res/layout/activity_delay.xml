@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_delay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zqy.rxjava2demo.use.operator.create.delay.DelayActivity"
+    android:background="@color/colorWindows"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/layout_top"/>
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
+
+    <Button
+        android:id="@+id/btn_defer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="defer"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_timer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="timer"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_interval"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="interval"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_intervalRange"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="intervalRange"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_range"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="range"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_rangeLong"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="rangeLong"
+        android:textAllCaps="false"/>
+
+</LinearLayout>
