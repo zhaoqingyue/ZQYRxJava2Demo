@@ -15,6 +15,9 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 联想搜索优化
+ */
 public class SearchActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";

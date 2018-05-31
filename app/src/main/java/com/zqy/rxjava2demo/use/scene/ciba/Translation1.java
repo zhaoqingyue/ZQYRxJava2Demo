@@ -1,10 +1,10 @@
-package com.zqy.rxjava2demo.use.scene.zipdisplay;
+package com.zqy.rxjava2demo.use.scene.ciba;
 
 /**
  * Created by zhaoqy on 2018/5/30.
  */
 
-public class Translation2 {
+public class Translation1 {
     /**
      * Json示例
      {
@@ -32,6 +32,6 @@ public class Translation2 {
 
     //定义 输出返回数据 的方法
     public String show() {
-        return ("第2次翻译= " + content.out);
+        return ("第1次翻译= " + content.out);
     }
 }

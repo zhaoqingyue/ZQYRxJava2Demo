@@ -118,6 +118,14 @@
         </activity>
         <activity android:name=".use.scene.SearchActivity">
         </activity>
+        <activity android:name=".use.scene.CallbackActivity">
+        </activity>
+        <activity android:name=".use.scene.ConditionalActivity">
+        </activity>
+        <activity android:name=".use.scene.UnconditionalActivity">
+        </activity>
+        <activity android:name=".use.scene.ReconnectionActivity">
+        </activity>
     </application>
 
 </manifest>

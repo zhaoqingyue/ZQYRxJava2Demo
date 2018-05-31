@@ -2,10 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_callback"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zqy.rxjava2demo.MainActivity"
+    tools:context="com.zqy.rxjava2demo.use.scene.CallbackActivity"
     android:orientation="vertical"
     android:background="@color/colorWindows">
 
@@ -21,25 +21,27 @@
         android:text=""
         android:lineSpacingExtra="5dp"/>
 
-    <Button
-        android:id="@+id/btn_base"
+    <TextView
+        android:id="@+id/tv_instruction"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:textAllCaps="false"
-        android:text="基本用法"/>
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
 
     <Button
-        android:id="@+id/btn_operator"
+        android:id="@+id/btn_fanyi"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textAllCaps="false"
-        android:text="操作符"/>
+        android:text="开始翻译"/>
 
-    <Button
-        android:id="@+id/btn_use"
+    <TextView
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:textAllCaps="false"
-        android:text="实例应用"/>
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
 
 </LinearLayout>

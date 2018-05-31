@@ -15,6 +15,9 @@ import butterknife.BindView;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 功能防抖
+ */
 public class ShakeActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";

@@ -16,6 +16,9 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 使用merge实现：合并 + 展示数据
+ */
 public class MergeDisplayActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";

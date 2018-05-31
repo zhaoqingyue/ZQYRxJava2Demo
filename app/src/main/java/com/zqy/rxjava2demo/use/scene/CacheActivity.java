@@ -13,6 +13,9 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.functions.Consumer;
 
+/**
+ * 获取缓存数据
+ */
 public class CacheActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";

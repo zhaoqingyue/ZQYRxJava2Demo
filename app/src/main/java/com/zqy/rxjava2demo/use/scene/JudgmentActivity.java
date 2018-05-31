@@ -22,6 +22,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function3;
 
+/**
+ * 联合判断
+ */
 public class JudgmentActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";

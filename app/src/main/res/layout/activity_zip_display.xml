@@ -36,4 +36,12 @@
         android:textAllCaps="false"
         android:text="翻译"/>
 
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text=""
+        android:lineSpacingExtra="5dp"/>
+
 </LinearLayout>

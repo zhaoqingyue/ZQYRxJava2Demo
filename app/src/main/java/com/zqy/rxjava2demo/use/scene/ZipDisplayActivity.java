@@ -2,14 +2,13 @@ package com.zqy.rxjava2demo.use.scene;
 
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.zqy.rxjava2demo.R;
 import com.zqy.rxjava2demo.base.BaseActivity;
-import com.zqy.rxjava2demo.use.scene.zipdisplay.GetRequest;
-import com.zqy.rxjava2demo.use.scene.zipdisplay.Translation1;
-import com.zqy.rxjava2demo.use.scene.zipdisplay.Translation2;
+import com.zqy.rxjava2demo.use.scene.ciba.GetRequest;
+import com.zqy.rxjava2demo.use.scene.ciba.Translation1;
+import com.zqy.rxjava2demo.use.scene.ciba.Translation2;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -22,6 +21,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * 使用zip实现：合并 + 展示数据
+ */
 public class ZipDisplayActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";
@@ -31,6 +33,9 @@ public class ZipDisplayActivity extends BaseActivity {
 
     @BindView(R.id.tv_instruction)
     TextView instruction;
+
+    @BindView(R.id.tv_result)
+    TextView tv_result;
 
     @Override
     protected int getLayoutResID() {
@@ -81,63 +86,65 @@ public class ZipDisplayActivity extends BaseActivity {
                 "6. 发送网络请求\n"+
                 "7. 发送网络请求\n"+
                 "8. 对返回的数据进行处理");
-
-
     }
 
     @OnClick({R.id.btn_fanyi})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_fanyi: {
-                // 定义Observable接口类型的网络请求对象
-                Observable<Translation1> observable1;
-                Observable<Translation2> observable2;
-
-                // 步骤1：创建Retrofit对象
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://fy.iciba.com/") // 设置 网络请求 Url
-                        .addConverterFactory(GsonConverterFactory.create()) //设置使用Gson解析(记得加入依赖)
-                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 支持RxJava
-                        .build();
-
-                // 步骤2：创建 网络请求接口 的实例
-                GetRequest request = retrofit.create(GetRequest.class);
-
-                // 步骤3：采用Observable<...>形式 对 2个网络请求 进行封装
-                observable1 = request.getCall1().subscribeOn(Schedulers.io()); // 新开线程进行网络请求1
-                observable2 = request.getCall2().subscribeOn(Schedulers.io()); // 新开线程进行网络请求2
-                // 即2个网络请求异步 & 同时发送
-
-                // 步骤4：通过使用Zip（）对两个网络请求进行合并再发送
-                Observable.zip(observable1, observable2,
-                        new BiFunction<Translation1, Translation2, String>() {
-
-                            // 注：创建BiFunction对象传入的第3个参数 = 合并后数据的数据类型
-                            @Override
-                            public String apply(Translation1 translation1,
-                                                Translation2 translation2) throws Exception {
-                                return translation1.show() + " & " + translation2.show();
-                            }
-                        }).observeOn(AndroidSchedulers.mainThread()) // 在主线程接收 & 处理数据
-                        .subscribe(new Consumer<String>() {
-
-                            // 成功返回数据时调用
-                            @Override
-                            public void accept(String s) throws Exception {
-                                // 结合显示2个网络请求的数据结果
-                                LogUtils.d(TAG, "最终接收到的数据是：" + s);
-                                Toast.makeText(ZipDisplayActivity.this, "最终接收到的数据是：" + s, Toast.LENGTH_LONG).show();
-                            }
-                        }, new Consumer<Throwable>() {
-
-                            // 网络请求错误时调用
-                            @Override
-                            public void accept(Throwable throwable) throws Exception {
-                                LogUtils.d(TAG, "登录失败");
-                            }
-                        });
+                fanyi();
                 break;
             }
         }
+    }
+
+    private void fanyi() {
+        // 定义Observable接口类型的网络请求对象
+        Observable<Translation1> observable1;
+        Observable<Translation2> observable2;
+
+        // 步骤1：创建Retrofit对象
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://fy.iciba.com/") // 设置 网络请求 Url
+                .addConverterFactory(GsonConverterFactory.create()) // 设置使用Gson解析(记得加入依赖)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 支持RxJava
+                .build();
+
+        // 步骤2：创建 网络请求接口 的实例
+        GetRequest request = retrofit.create(GetRequest.class);
+
+        // 步骤3：采用Observable<...>形式 对 2个网络请求 进行封装
+        observable1 = request.getCall1().subscribeOn(Schedulers.io()); // 新开线程进行网络请求1
+        observable2 = request.getCall2().subscribeOn(Schedulers.io()); // 新开线程进行网络请求2
+        // 即2个网络请求异步 & 同时发送
+
+        // 步骤4：通过使用Zip（）对两个网络请求进行合并再发送
+        Observable.zip(observable1, observable2,
+                new BiFunction<Translation1, Translation2, String>() {
+
+                    // 注：创建BiFunction对象传入的第3个参数 = 合并后数据的数据类型
+                    @Override
+                    public String apply(Translation1 translation1,
+                                        Translation2 translation2) throws Exception {
+                        return translation1.show() + " & " + translation2.show();
+                    }
+                }).observeOn(AndroidSchedulers.mainThread()) // 在主线程接收 & 处理数据
+                .subscribe(new Consumer<String>() {
+
+                    // 成功返回数据时调用
+                    @Override
+                    public void accept(String s) throws Exception {
+                        LogUtils.d(TAG, "最终接收到的数据是：" + s);
+                        // 结合显示2个网络请求的数据结果
+                        tv_result.setText("最终接收到的数据是：" + s);
+                    }
+                }, new Consumer<Throwable>() {
+
+                    // 网络请求错误时调用
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        LogUtils.d(TAG, "登录失败");
+                    }
+                });
     }
 }
