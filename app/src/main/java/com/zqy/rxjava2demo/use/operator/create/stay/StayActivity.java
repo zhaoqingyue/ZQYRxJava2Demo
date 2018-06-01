@@ -1,4 +1,4 @@
-package com.zqy.rxjava2demo.use.operator.create.delay;
+package com.zqy.rxjava2demo.use.operator.create.stay;
 
 import android.content.Intent;
 import android.view.View;
@@ -10,7 +10,7 @@ import com.zqy.rxjava2demo.base.BaseActivity;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class DelayActivity extends BaseActivity {
+public class StayActivity extends BaseActivity {
 
     @BindView(R.id.tv_des)
     TextView des;

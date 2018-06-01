@@ -5,7 +5,7 @@
     android:id="@+id/activity_delay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zqy.rxjava2demo.use.operator.create.delay.DelayActivity"
+    tools:context="com.zqy.rxjava2demo.use.operator.create.stay.StayActivity"
     android:background="@color/colorWindows"
     android:orientation="vertical">
 

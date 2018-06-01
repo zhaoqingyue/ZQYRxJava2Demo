@@ -1,18 +1,22 @@
-package com.zqy.rxjava2demo.use.operator.create.delay;
+package com.zqy.rxjava2demo.use.operator.create.stay;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.zqy.rxjava2demo.R;
 import com.zqy.rxjava2demo.base.BaseActivity;
 
+import java.util.concurrent.TimeUnit;
+
 import butterknife.BindView;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
-public class RangeActivity extends BaseActivity {
+public class TimerActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";
 
@@ -23,6 +27,8 @@ public class RangeActivity extends BaseActivity {
     @BindView(R.id.iv_img)
     ImageView imageView;
 
+    int delay = 3;
+
     @Override
     protected int getLayoutResID() {
         return R.layout.activity_base;
@@ -30,7 +36,7 @@ public class RangeActivity extends BaseActivity {
 
     @Override
     protected String getTitleName() {
-        return "range操作符";
+        return "timer操作符";
     }
 
     @Override
@@ -38,21 +44,16 @@ public class RangeActivity extends BaseActivity {
         /**
          * 作用：
          * 快速创建1个被观察者对象（Observable）
-         * 发送事件的特点：连续发送 1个事件序列，可指定范围
+         * 发送事件的特点：延迟指定时间后，发送1个数值0（Long类型）
          */
         des.setText("作用：\n" +
                 "1. 快速创建1个被观察者对象（Observable）\n" +
-                "2. 发送事件的特点：连续发送 1个事件序列，可指定范围");
-        /**
-         * 参数说明：
-         * 参数1 = 事件序列起始点；
-         * 参数2 = 事件数量；
-         * 注：若设置为负数，则会抛出异常
-         */
-        Observable.range(3, 10)
-                // 该例子发送的事件序列特点：
-                // 从3开始发送，每次发送事件递增1，一共发送10个事件
-                .subscribe(new Observer<Integer>() {
+                "2. 发送事件的特点：延迟指定时间后，发送1个数值0（Long类型）");
+
+        content.setText("正在" + delay + "秒倒计时...");
+        Observable.timer(delay, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
 
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -60,9 +61,10 @@ public class RangeActivity extends BaseActivity {
                     }
 
                     @Override
-                    public void onNext(Integer value) {
+                    public void onNext(Long value) {
                         LogUtils.d(TAG, "接收到了事件" + value);
-                        content.setText("" + value);
+                        Toast.makeText(getApplicationContext(), "倒计时结束", Toast.LENGTH_SHORT).show();
+                        content.setText("倒计时结束");
                     }
 
                     @Override
@@ -73,6 +75,7 @@ public class RangeActivity extends BaseActivity {
                     @Override
                     public void onComplete() {
                         LogUtils.d(TAG, "对Complete事件作出响应");
+                        imageView.setImageResource(R.mipmap.timer);
                     }
                 });
     }

@@ -50,19 +50,19 @@
         </activity>
         <activity android:name=".use.operator.create.fast.NeverActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.DelayActivity">
+        <activity android:name=".use.operator.create.stay.StayActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.DeferActivity">
+        <activity android:name=".use.operator.create.stay.DeferActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.IntervalActivity">
+        <activity android:name=".use.operator.create.stay.IntervalActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.IntervalRangeActivity">
+        <activity android:name=".use.operator.create.stay.IntervalRangeActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.RangeActivity">
+        <activity android:name=".use.operator.create.stay.RangeActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.RangeLongActivity">
+        <activity android:name=".use.operator.create.stay.RangeLongActivity">
         </activity>
-        <activity android:name=".use.operator.create.delay.TimerActivity">
+        <activity android:name=".use.operator.create.stay.TimerActivity">
         </activity>
         <activity android:name=".use.operator.convert.MapActivity">
         </activity>
@@ -125,6 +125,14 @@
         <activity android:name=".use.scene.UnconditionalActivity">
         </activity>
         <activity android:name=".use.scene.ReconnectionActivity">
+        </activity>
+        <activity android:name=".use.operator.function.SubscribeActivity">
+        </activity>
+        <activity android:name=".use.operator.function.DelayActivity">
+        </activity>
+        <activity android:name=".use.operator.function.RepeatActivity">
+        </activity>
+        <activity android:name=".use.operator.function.RepeatWhenActivity">
         </activity>
     </application>
 

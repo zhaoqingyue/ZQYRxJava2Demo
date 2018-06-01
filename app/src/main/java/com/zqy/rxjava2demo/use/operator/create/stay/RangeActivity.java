@@ -1,4 +1,4 @@
-package com.zqy.rxjava2demo.use.operator.create.delay;
+package com.zqy.rxjava2demo.use.operator.create.stay;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,15 +7,12 @@ import com.blankj.utilcode.util.LogUtils;
 import com.zqy.rxjava2demo.R;
 import com.zqy.rxjava2demo.base.BaseActivity;
 
-import java.util.concurrent.TimeUnit;
-
 import butterknife.BindView;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
-public class IntervalRangeActivity extends BaseActivity {
+public class RangeActivity extends BaseActivity {
 
     public static final String TAG = "ZQY";
 
@@ -33,7 +30,7 @@ public class IntervalRangeActivity extends BaseActivity {
 
     @Override
     protected String getTitleName() {
-        return "intervalRange操作符";
+        return "range操作符";
     }
 
     @Override
@@ -41,26 +38,21 @@ public class IntervalRangeActivity extends BaseActivity {
         /**
          * 作用：
          * 快速创建1个被观察者对象（Observable）
-         * 发送事件的特点：每隔指定时间就发送事件，可指定发送的数据的数量
+         * 发送事件的特点：连续发送 1个事件序列，可指定范围
          */
         des.setText("作用：\n" +
                 "1. 快速创建1个被观察者对象（Observable）\n" +
-                "2. 发送事件的特点：每隔指定时间就发送事件，可指定发送的数据的数量");
-
+                "2. 发送事件的特点：连续发送 1个事件序列，可指定范围");
         /**
          * 参数说明：
          * 参数1 = 事件序列起始点；
          * 参数2 = 事件数量；
-         * 参数3 = 第1次事件延迟发送时间；
-         * 参数4 = 间隔时间数字；
-         * 参数5 = 时间单位
+         * 注：若设置为负数，则会抛出异常
          */
-        Observable.intervalRange(3, 10, 2, 1, TimeUnit.SECONDS)
+        Observable.range(3, 10)
                 // 该例子发送的事件序列特点：
-                // 1. 从3开始，一共发送10个事件；
-                // 2. 第1次延迟2s发送，之后每隔2秒产生1个数字
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Long>() {
+                // 从3开始发送，每次发送事件递增1，一共发送10个事件
+                .subscribe(new Observer<Integer>() {
 
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -68,7 +60,7 @@ public class IntervalRangeActivity extends BaseActivity {
                     }
 
                     @Override
-                    public void onNext(Long value) {
+                    public void onNext(Integer value) {
                         LogUtils.d(TAG, "接收到了事件" + value);
                         content.setText("" + value);
                     }

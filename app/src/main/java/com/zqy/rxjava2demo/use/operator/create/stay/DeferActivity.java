@@ -1,4 +1,4 @@
-package com.zqy.rxjava2demo.use.operator.create.delay;
+package com.zqy.rxjava2demo.use.operator.create.stay;
 
 import android.widget.ImageView;
 import android.widget.TextView;

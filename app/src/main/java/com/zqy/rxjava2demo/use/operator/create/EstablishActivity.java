@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.zqy.rxjava2demo.R;
 import com.zqy.rxjava2demo.base.BaseActivity;
 import com.zqy.rxjava2demo.use.operator.create.base.CreateActivity;
-import com.zqy.rxjava2demo.use.operator.create.delay.DelayActivity;
+import com.zqy.rxjava2demo.use.operator.create.stay.StayActivity;
 import com.zqy.rxjava2demo.use.operator.create.fast.FastActivity;
 
 import butterknife.BindView;
@@ -49,7 +49,7 @@ public class EstablishActivity extends BaseActivity {
                 "4. 数组/集合遍历");
     }
 
-    @OnClick({R.id.btn_create_base, R.id.btn_create_fast, R.id.btn_create_delay})
+    @OnClick({R.id.btn_create_base, R.id.btn_create_fast, R.id.btn_create_stay})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_create_base: {
@@ -64,9 +64,9 @@ public class EstablishActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_create_delay: {
+            case R.id.btn_create_stay: {
                 // 延迟创建
-                Intent intent = new Intent(this, DelayActivity.class);
+                Intent intent = new Intent(this, StayActivity.class);
                 startActivity(intent);
                 break;
             }

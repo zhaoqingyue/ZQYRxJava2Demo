@@ -36,7 +36,7 @@
         android:text="快速创建"/>
 
     <Button
-        android:id="@+id/btn_create_delay"
+        android:id="@+id/btn_create_stay"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textAllCaps="false"

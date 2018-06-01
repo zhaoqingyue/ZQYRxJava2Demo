@@ -38,6 +38,14 @@
                 android:text=""
                 android:lineSpacingExtra="5dp"/>
 
+            <Button
+                android:id="@+id/btn_extra"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:textAllCaps="false"
+                android:text=""
+                android:visibility="gone"/>
+
             <ImageView
                 android:id="@+id/iv_img"
                 android:layout_width="match_parent"
