@@ -36,7 +36,7 @@ public class FunctionActivity extends BaseActivity {
     }
 
     @OnClick({R.id.btn_function_subscribe, R.id.btn_function_schedule, R.id.btn_function_delay,
-            R.id.btn_function_error, R.id.btn_function_repeat})
+            R.id.btn_function_error, R.id.btn_function_repeat, R.id.btn_function_do})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_function_subscribe: {
@@ -64,6 +64,12 @@ public class FunctionActivity extends BaseActivity {
             case R.id.btn_function_repeat: {
                 // 重复发送操作
                 Intent intent = new Intent(this, RepeatActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_function_do: {
+                // 生命周期do
+                Intent intent = new Intent(this, DoActivity.class);
                 startActivity(intent);
                 break;
             }

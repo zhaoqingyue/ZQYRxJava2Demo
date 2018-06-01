@@ -134,6 +134,8 @@
         </activity>
         <activity android:name=".use.operator.function.RepeatWhenActivity">
         </activity>
+        <activity android:name=".use.operator.function.DoActivity">
+        </activity>
     </application>
 
 </manifest>
