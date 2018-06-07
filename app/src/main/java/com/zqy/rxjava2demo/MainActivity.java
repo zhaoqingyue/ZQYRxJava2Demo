@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity {
         return false;
     }
 
-    @OnClick({R.id.btn_base, R.id.btn_operator, R.id.btn_use})
+    @OnClick({R.id.btn_base, R.id.btn_operator, R.id.btn_use, R.id.btn_flowable})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_base: {
@@ -76,6 +76,12 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_use: {
                 // 使用场景
                 Intent intent = new Intent(this, SceneActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_flowable: {
+                // 背压策略
+                Intent intent = new Intent(this, FlowableActivity.class);
                 startActivity(intent);
                 break;
             }

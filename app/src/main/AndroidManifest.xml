@@ -136,6 +136,8 @@
         </activity>
         <activity android:name=".use.operator.function.DoActivity">
         </activity>
+        <activity android:name=".FlowableActivity">
+        </activity>
     </application>
 
 </manifest>
